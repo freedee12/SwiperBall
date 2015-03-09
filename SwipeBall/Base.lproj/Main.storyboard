@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="SwiperBall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="maK-i9-Uhn"/>
+                        <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BR-an-FtA">
+                                <rect key="frame" x="167" y="193" width="266" height="213"/>
+                                <subviews>
+                                    <button opaque="NO" tag="-2" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFT-ct-E5R">
+                                        <rect key="frame" x="6" y="175" width="46" height="30"/>
+                                        <state key="normal" title="Red">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="tZD-zm-8bR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="-2" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZq-3K-w0G">
+                                        <rect key="frame" x="114" y="175" width="46" height="30"/>
+                                        <state key="normal" title="Blue">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="blueButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="J87-gR-NFs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="-2" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxG-RM-JoG">
+                                        <rect key="frame" x="173" y="175" width="46" height="30"/>
+                                        <state key="normal" title="Gray">
+                                            <color key="titleColor" red="0.61850931186868685" green="0.61850931186868685" blue="0.61850931186868685" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="grayButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="UPc-h0-rHw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWu-ao-Czr">
+                                        <rect key="frame" x="6" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="settingsClose:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bMH-00-3Fa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="-2" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crm-9a-b4Z">
+                                        <rect key="frame" x="60" y="175" width="46" height="30"/>
+                                        <state key="normal" title="Green">
+                                            <color key="titleColor" red="0.0048892577090000004" green="1" blue="0.12825929899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="greenButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="4cm-ew-Nwd"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Z-Z5-zet">
+                                        <rect key="frame" x="60" y="96" width="139" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0073982007575758013" green="0.0073982007575758013" blue="0.0073982007575758013" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="Mc8-3H-0Jh"/>
+                                    <constraint firstAttribute="height" constant="213" id="wNz-Q7-qFZ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-4l-sbO">
+                                <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="dmm-qL-wtz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="0BR-an-FtA" secondAttribute="centerY" id="g0o-oT-YzN"/>
+                            <constraint firstAttribute="centerX" secondItem="0BR-an-FtA" secondAttribute="centerX" id="rt8-0T-1t1"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zbo-JI-ktq" appends="YES" id="5HM-zb-HRS"/>
+                            <outletCollection property="gestureRecognizers" destination="XgS-40-5Ue" appends="YES" id="rDG-R8-cye"/>
+                            <outletCollection property="gestureRecognizers" destination="WdA-no-q2R" appends="YES" id="YGu-mc-fCp"/>
+                            <outletCollection property="gestureRecognizers" destination="0wC-qe-r3s" appends="YES" id="kRm-ng-6Ip"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="blue" destination="wZq-3K-w0G" id="Uxq-G4-Ced"/>
+                        <outlet property="green" destination="crm-9a-b4Z" id="Ecx-6N-nd7"/>
+                        <outlet property="highscorelable" destination="a1Z-Z5-zet" id="FcK-eA-jak"/>
+                        <outlet property="red" destination="rFT-ct-E5R" id="dSx-Hy-0Zw"/>
+                        <outlet property="settingsView" destination="0BR-an-FtA" id="Msq-Hg-3vA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="zbo-JI-ktq" userLabel="Up">
+                    <connections>
+                        <action selector="uSwipe:" destination="BV1-FR-VrT" id="e8g-11-eMX"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="XgS-40-5Ue" userLabel="Down">
+                    <connections>
+                        <action selector="dSwipe:" destination="BV1-FR-VrT" id="w28-GA-L5C"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="WdA-no-q2R" userLabel="Left">
+                    <connections>
+                        <action selector="lSwipe:" destination="BV1-FR-VrT" id="Qay-cr-hbb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="0wC-qe-r3s" userLabel="Right">
+                    <connections>
+                        <action selector="rSwipe:" destination="BV1-FR-VrT" id="VkD-g5-Ify"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="293" y="91"/>
+        </scene>
+    </scenes>
+</document>
