@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.enableLocalDatastore()
         Parse.setApplicationId("3hISfyAeGmWP9tfp6UTiHqiJayRnwlREvV90EgmZ", clientKey: "OIHAX1wSRbLoMZaxzg3ssntgIRIxBEqeG93uPgSm")
-        var testObject : PFObject = PFObject(className: "TestObject")
+        /*var testObject : PFObject = PFObject(className: "TestObject")
         testObject["foo"] = "bar"
-        testObject.saveInBackground()
+        testObject.saveInBackground()*/
 
         return true
     }

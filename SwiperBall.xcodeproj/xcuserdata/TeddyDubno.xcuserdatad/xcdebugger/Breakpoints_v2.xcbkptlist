@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwipeBall/GameViewController.swift"
-            timestampString = "447633780.022314"
+            timestampString = "447701027.736932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "settingButton(_:)"
             landmarkType = "5">
          </BreakpointContent>

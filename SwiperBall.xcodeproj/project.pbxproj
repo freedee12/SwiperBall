@@ -25,6 +25,7 @@
 		5816C7E41AAE4A9A008E5F25 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5816C7DF1AAE4A9A008E5F25 /* ParseUI.framework */; };
 		58B59C8F1A94F58F00447F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58B59C8D1A94F58F00447F1D /* Model.xcdatamodeld */; };
 		58B59C911A94F72E00447F1D /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B59C901A94F72E00447F1D /* HighScore.swift */; };
+		58BE9FA41AAF4DB500B5D52D /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE9FA31AAF4DB400B5D52D /* MainMenu.swift */; };
 		58FE17A41A700C5700F4ECCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE17A31A700C5700F4ECCF /* AppDelegate.swift */; };
 		58FE17A61A700C5700F4ECCF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 58FE17A51A700C5700F4ECCF /* GameScene.sks */; };
 		58FE17A81A700C5700F4ECCF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE17A71A700C5700F4ECCF /* GameScene.swift */; };
@@ -65,6 +66,7 @@
 		5816C7E61AAE4B61008E5F25 /* SwiperBall-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiperBall-Bridging-Header.h"; sourceTree = "<group>"; };
 		58B59C8E1A94F58F00447F1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		58B59C901A94F72E00447F1D /* HighScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
+		58BE9FA31AAF4DB400B5D52D /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		58FE179E1A700C5700F4ECCF /* SwiperBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiperBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FE17A21A700C5700F4ECCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58FE17A31A700C5700F4ECCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				58FE17A51A700C5700F4ECCF /* GameScene.sks */,
 				58FE17A71A700C5700F4ECCF /* GameScene.swift */,
 				58FE17A91A700C5700F4ECCF /* GameViewController.swift */,
+				58BE9FA31AAF4DB400B5D52D /* MainMenu.swift */,
 				58FE17AB1A700C5700F4ECCF /* Main.storyboard */,
 				58FE17AE1A700C5700F4ECCF /* Images.xcassets */,
 				58FE17B01A700C5700F4ECCF /* LaunchScreen.xib */,
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58FE17A81A700C5700F4ECCF /* GameScene.swift in Sources */,
+				58BE9FA41AAF4DB500B5D52D /* MainMenu.swift in Sources */,
 				58FE17AA1A700C5700F4ECCF /* GameViewController.swift in Sources */,
 				58FE17A41A700C5700F4ECCF /* AppDelegate.swift in Sources */,
 				58B59C8F1A94F58F00447F1D /* Model.xcdatamodeld in Sources */,

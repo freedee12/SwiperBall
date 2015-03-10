@@ -13,6 +13,7 @@ var open = false
 var score : PFObject = PFObject(className: "Score")
 var query = PFQuery(className:"Score")
 var highestscore = 0
+var topdog = ""
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
@@ -32,10 +33,8 @@ extension SKNode {
 
 class GameViewController: UIViewController {
     @IBOutlet weak var settingsView: UIView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
             let skView = self.view as SKView
@@ -50,8 +49,16 @@ class GameViewController: UIViewController {
             
             skView.presentScene(scene)
         }
-        /*settingsView.center = view.center
-        settingsView.frame = CGRect(x: self.view.frame.width/10, y: self.view.frame.height - self.view.frame.height/10, width: self.view.frame.width/2, height: self.view.frame.height/2)*/
+        //query.orderByDescending("highscore")
+        query.orderByDescending("highscore")
+        query.getFirstObjectInBackgroundWithBlock(){(gameScore: PFObject!, error: NSError!) -> Void in
+            if error == nil && gameScore != nil {
+                highestscore = gameScore["highscore"] as Int
+                topdog = gameScore["username"] as String
+            } else {
+                println(error)
+            }
+        }
            }
     
     override func shouldAutorotate() -> Bool {
@@ -74,7 +81,7 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    @IBOutlet weak var HighestScore: UILabel!
+
     @IBOutlet weak var red: UIButton!
     @IBOutlet weak var green: UIButton!
     @IBOutlet weak var blue: UIButton!
@@ -112,23 +119,25 @@ class GameViewController: UIViewController {
         GameScene().unpause()}
         
         else {
-            query.orderByDescending("highscore")
+            
             highscorelable.text = "High Score: \(highScore)"
             settingsView.hidden = false
-            query.getFirstObjectInBackgroundWithBlock(){(gameScore: PFObject!, error: NSError!) -> Void in
-                if error == nil && gameScore != nil {
-                    highestscore = gameScore["highscore"] as Int
-                } else {
-                    println(error)
-                }
-            }
+//            query.getFirstObjectInBackgroundWithBlock(){(gameScore: PFObject!, error: NSError!) -> Void in
+//                if error == nil && gameScore != nil {
+//                    highestscore = gameScore["highscore"] as Int
+//                    
+//                } else {
+//                    println(error)
+//                }
+//            }
             if highScore > highestscore{
-            
+             score["username"] = username
     
             score["highscore"] = highScore
             score.saveInBackground()
+                highestscore = highScore
             }
-            HS.text = "Highest gloabal Score = \(highestscore)"
+            HS.text = "Highest gloabal Score = \(highestscore)" + "     "+"By User:" + topdog
         open = true
         GameScene().pause()}
     }
@@ -137,5 +146,24 @@ class GameViewController: UIViewController {
         open = false
         GameScene().unpause()
         
+    }
+    override func viewWillDisappear(animated: Bool) {
+        if highScore > highestscore{
+            score["username"] = username
+            
+            score["highscore"] = highScore
+            score.saveInBackground()
+            
+        }
+
+    }
+    override func viewDidDisappear(animated: Bool) {
+        if highScore > highestscore{
+            score["username"] = username
+            
+            score["highscore"] = highScore
+            score.saveInBackground()
+
+    }
     }
 }
