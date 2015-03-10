@@ -10,6 +10,9 @@ import UIKit
 import SpriteKit
 import CoreData
 var open = false
+var score : PFObject = PFObject(className: "Score")
+var query = PFQuery(className:"Score")
+var highestscore = 0
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
@@ -49,7 +52,7 @@ class GameViewController: UIViewController {
         }
         /*settingsView.center = view.center
         settingsView.frame = CGRect(x: self.view.frame.width/10, y: self.view.frame.height - self.view.frame.height/10, width: self.view.frame.width/2, height: self.view.frame.height/2)*/
-            }
+           }
     
     override func shouldAutorotate() -> Bool {
         return true
@@ -71,6 +74,7 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    @IBOutlet weak var HighestScore: UILabel!
     @IBOutlet weak var red: UIButton!
     @IBOutlet weak var green: UIButton!
     @IBOutlet weak var blue: UIButton!
@@ -100,6 +104,7 @@ class GameViewController: UIViewController {
     @IBAction func rSwipe(sender: AnyObject) {
         GameScene().rSwipe()
     }
+    @IBOutlet weak var HS: UILabel!
     @IBAction func settingButton(sender: AnyObject) {
     //settingsView.center = view.center
         if open {settingsView.hidden = true
@@ -107,8 +112,23 @@ class GameViewController: UIViewController {
         GameScene().unpause()}
         
         else {
+            query.orderByDescending("highscore")
             highscorelable.text = "High Score: \(highScore)"
             settingsView.hidden = false
+            query.getFirstObjectInBackgroundWithBlock(){(gameScore: PFObject!, error: NSError!) -> Void in
+                if error == nil && gameScore != nil {
+                    highestscore = gameScore["highscore"] as Int
+                } else {
+                    println(error)
+                }
+            }
+            if highScore > highestscore{
+            
+    
+            score["highscore"] = highScore
+            score.saveInBackground()
+            }
+            HS.text = "Highest gloabal Score = \(highestscore)"
         open = true
         GameScene().pause()}
     }

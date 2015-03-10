@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId("3hISfyAeGmWP9tfp6UTiHqiJayRnwlREvV90EgmZ", clientKey: "OIHAX1wSRbLoMZaxzg3ssntgIRIxBEqeG93uPgSm")
+        var testObject : PFObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackground()
+
         return true
     }
 

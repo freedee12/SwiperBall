@@ -73,6 +73,12 @@
                                         <color key="textColor" red="0.0073982007575758013" green="0.0073982007575758013" blue="0.0073982007575758013" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCt-32-krg">
+                                        <rect key="frame" x="6" y="67" width="252" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -104,6 +110,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="HS" destination="UCt-32-krg" id="L7m-b7-iiO"/>
                         <outlet property="blue" destination="wZq-3K-w0G" id="Uxq-G4-Ced"/>
                         <outlet property="green" destination="crm-9a-b4Z" id="Ecx-6N-nd7"/>
                         <outlet property="highscorelable" destination="a1Z-Z5-zet" id="FcK-eA-jak"/>
