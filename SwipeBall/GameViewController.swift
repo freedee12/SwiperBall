@@ -32,6 +32,7 @@ extension SKNode {
 }
 
 class GameViewController: UIViewController {
+      @IBOutlet weak var potato: UILabel!
     @IBOutlet weak var settingsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +60,12 @@ class GameViewController: UIViewController {
                 println(error)
             }
         }
+         var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
            }
+    func update() {
+    potato.text = "\(Score) "
     
+    }
     override func shouldAutorotate() -> Bool {
         return true
     }
@@ -141,6 +146,8 @@ class GameViewController: UIViewController {
         open = true
         GameScene().pause()}
     }
+  
+    
     @IBAction func settingsClose(sender: AnyObject) {
         settingsView.hidden = true
         open = false

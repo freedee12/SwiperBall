@@ -97,7 +97,7 @@ class GameScene: SKScene {
         scoreBoard.fontSize = 35
         scoreBoard.fontColor = UIColor.blackColor()
         scoreBoard.position = CGPoint(x: self.size.width-self.size.width/3, y: self.size.height-self.size.height/18)
-        self.addChild(scoreBoard)
+        //self.addChild(scoreBoard)
         
     
     }
@@ -201,6 +201,7 @@ class GameScene: SKScene {
         /*if Score > highScore {
         highScore = Score
                 }*/
+        
         var defaults=NSUserDefaults()
         var highscore=defaults.integerForKey("highscore")
         

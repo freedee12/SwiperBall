@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TWB-mu-sN8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Menu-->
@@ -17,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVc-Qp-Vh9">
-                                <rect key="frame" x="264" y="280" width="73" height="40"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="265" y="279" width="72" height="41"/>
+                                <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -28,16 +29,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="vVc-Qp-Vh9" secondAttribute="centerX" constant="-0.5" id="E1E-la-Z0H"/>
                             <constraint firstAttribute="centerX" secondItem="vVc-Qp-Vh9" secondAttribute="centerX" constant="-0.5" id="aUH-IA-V1N"/>
-                            <constraint firstAttribute="centerX" secondItem="vVc-Qp-Vh9" secondAttribute="centerX" constant="-0.5" id="l48-Uy-LGt"/>
                             <constraint firstAttribute="centerY" secondItem="vVc-Qp-Vh9" secondAttribute="centerY" id="qe0-vq-n13"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z15-jk-EfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="91"/>
+            <point key="canvasLocation" x="-500" y="91"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -130,10 +129,17 @@
                                     <action selector="settingButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="dmm-qL-wtz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZG-xJ-BrJ">
+                                <rect key="frame" x="489" y="28" width="80" height="52"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="KZG-xJ-BrJ" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailingMargin" constant="-15" id="JP0-EH-A0d"/>
+                            <constraint firstItem="KZG-xJ-BrJ" firstAttribute="top" secondItem="maK-i9-Uhn" secondAttribute="bottom" constant="8" id="O6H-Bh-dBQ"/>
                             <constraint firstAttribute="centerY" secondItem="0BR-an-FtA" secondAttribute="centerY" id="g0o-oT-YzN"/>
                             <constraint firstAttribute="centerX" secondItem="0BR-an-FtA" secondAttribute="centerX" id="rt8-0T-1t1"/>
                         </constraints>
@@ -149,6 +155,7 @@
                         <outlet property="blue" destination="wZq-3K-w0G" id="Uxq-G4-Ced"/>
                         <outlet property="green" destination="crm-9a-b4Z" id="Ecx-6N-nd7"/>
                         <outlet property="highscorelable" destination="a1Z-Z5-zet" id="FcK-eA-jak"/>
+                        <outlet property="potato" destination="KZG-xJ-BrJ" id="6lm-5X-BUJ"/>
                         <outlet property="red" destination="rFT-ct-E5R" id="dSx-Hy-0Zw"/>
                         <outlet property="settingsView" destination="0BR-an-FtA" id="Msq-Hg-3vA"/>
                     </connections>
@@ -175,7 +182,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="293" y="91"/>
+            <point key="canvasLocation" x="256" y="197"/>
         </scene>
     </scenes>
 </document>
