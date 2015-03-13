@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TWB-mu-sN8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DBz-ye-dkO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9pR-NR-lHJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEY-mi-qbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController navigationBarHidden="YES" id="DBz-ye-dkO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u0P-9G-mV9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TWB-mu-sN8" kind="relationship" relationship="rootViewController" id="o1M-bg-V8B"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1524" y="197"/>
+        </scene>
         <!--Main Menu-->
         <scene sceneID="S3R-kP-9d8">
             <objects>
@@ -17,26 +33,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVc-Qp-Vh9">
-                                <rect key="frame" x="265" y="279" width="72" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVc-Qp-Vh9">
+                                <rect key="frame" x="289" y="164" width="43" height="52"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
                                 <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.61752422029999998" green="0.38521788670000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="HEO-zR-QJK"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="" id="CTX-S3-mCL"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLq-rn-XeH">
+                                <rect key="frame" x="271.5" y="299" width="77" height="52"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="vVc-Qp-Vh9" secondAttribute="centerX" constant="-0.5" id="aUH-IA-V1N"/>
-                            <constraint firstAttribute="centerY" secondItem="vVc-Qp-Vh9" secondAttribute="centerY" id="qe0-vq-n13"/>
+                            <constraint firstItem="YLq-rn-XeH" firstAttribute="top" secondItem="vVc-Qp-Vh9" secondAttribute="bottom" constant="83" id="RcE-pM-erY"/>
+                            <constraint firstAttribute="centerX" secondItem="vVc-Qp-Vh9" secondAttribute="centerX" constant="-10.5" id="XFv-mA-PyL"/>
+                            <constraint firstAttribute="centerX" secondItem="YLq-rn-XeH" secondAttribute="centerX" constant="-10" id="ZPx-YR-8U9"/>
+                            <constraint firstItem="vVc-Qp-Vh9" firstAttribute="top" secondItem="ugh-rO-UZ6" secondAttribute="bottom" constant="144" id="dAF-Nv-PbU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2Oh-oz-Sn0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z15-jk-EfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="91"/>
+            <point key="canvasLocation" x="-521" y="231"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -107,6 +135,15 @@
                                         <color key="textColor" red="0.0073982007575758013" green="0.0073982007575758013" blue="0.0073982007575758013" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-7K-Kd7">
+                                        <rect key="frame" x="220" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Menu">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="BacktoMenu:" destination="BV1-FR-VrT" eventType="touchUpInside" id="STu-dG-3CP"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCt-32-krg">
                                         <rect key="frame" x="6" y="38" width="252" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -120,8 +157,16 @@
                                     <constraint firstAttribute="height" constant="213" id="wNz-Q7-qFZ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-4l-sbO">
-                                <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZG-xJ-BrJ">
+                                <rect key="frame" x="556" y="28" width="12.5" height="28"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-4l-sbO">
+                                <rect key="frame" x="0.0" y="28" width="71" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="Ujb-m1-VuB"/>
+                                </constraints>
                                 <state key="normal" title="Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -129,17 +174,14 @@
                                     <action selector="settingButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="dmm-qL-wtz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZG-xJ-BrJ">
-                                <rect key="frame" x="489" y="28" width="80" height="52"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="KZG-xJ-BrJ" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailingMargin" constant="-15" id="JP0-EH-A0d"/>
                             <constraint firstItem="KZG-xJ-BrJ" firstAttribute="top" secondItem="maK-i9-Uhn" secondAttribute="bottom" constant="8" id="O6H-Bh-dBQ"/>
+                            <constraint firstItem="fgO-4l-sbO" firstAttribute="top" secondItem="maK-i9-Uhn" secondAttribute="bottom" constant="8" symbolic="YES" id="Uk7-U9-qeR"/>
+                            <constraint firstItem="fgO-4l-sbO" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="eHD-a0-CRM"/>
                             <constraint firstAttribute="centerY" secondItem="0BR-an-FtA" secondAttribute="centerY" id="g0o-oT-YzN"/>
                             <constraint firstAttribute="centerX" secondItem="0BR-an-FtA" secondAttribute="centerX" id="rt8-0T-1t1"/>
                         </constraints>
@@ -182,7 +224,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="256" y="197"/>
+            <point key="canvasLocation" x="275" y="231"/>
         </scene>
     </scenes>
 </document>

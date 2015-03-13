@@ -8,6 +8,7 @@
 
 import SpriteKit
 import Darwin
+var activated = true
 let balls = SKShapeNode()
 let sprite1 = SKShapeNode(circleOfRadius: 8)
 let sprite2 = SKShapeNode(circleOfRadius: 8)
@@ -35,8 +36,9 @@ extension Array {
 }
 
 class GameScene: SKScene {
-    
+
     override func didMoveToView(view: SKView) {
+        if activated{
         initballs()
         //Circle parent class
         initcirc()
@@ -44,6 +46,7 @@ class GameScene: SKScene {
         initplayer()
         //adds the player
         initscore()
+        }
         //add score
         reset()
     
@@ -178,6 +181,7 @@ class GameScene: SKScene {
             let rt = Float(3.141 *  Float(index)/2.0 )
             let nVel = RotateVectorAboutOrigin(CGVector(dx:-(150+3*Score),dy:0),angle: rt)
             ballarray[index].physicsBody?.velocity = nVel
+            reset()
     }
         psprite.physicsBody?.velocity = direction
         swiped = swiped - 1
@@ -245,4 +249,11 @@ class GameScene: SKScene {
             }
 
     }
+    func unpair(){
+        balls.removeAllChildren()
+        self.removeAllChildren()
+        GameViewController().didReceiveMemoryWarning()
+        
+    }
+    
 }

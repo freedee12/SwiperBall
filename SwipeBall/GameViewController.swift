@@ -32,7 +32,7 @@ extension SKNode {
 }
 
 class GameViewController: UIViewController {
-      @IBOutlet weak var potato: UILabel!
+    @IBOutlet weak var potato: UILabel!
     @IBOutlet weak var settingsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +60,16 @@ class GameViewController: UIViewController {
                 println(error)
             }
         }
-         var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-           }
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
     func update() {
-    potato.text = "\(Score) "
-    
+        potato.text = "\(Score) "
+        
     }
     override func shouldAutorotate() -> Bool {
         return true
     }
-
+    
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
@@ -77,16 +77,17 @@ class GameViewController: UIViewController {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
+        self.view = nil
     }
-
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
+    
     @IBOutlet weak var red: UIButton!
     @IBOutlet weak var green: UIButton!
     @IBOutlet weak var blue: UIButton!
@@ -102,7 +103,7 @@ class GameViewController: UIViewController {
     }
     @IBAction func grayButton(sender: AnyObject) {
         GameScene().chanagecolor(UIColor.lightGrayColor())
-
+        
     }
     @IBAction func uSwipe(sender: AnyObject) {
         GameScene().uSwipe()
@@ -118,35 +119,43 @@ class GameViewController: UIViewController {
     }
     @IBOutlet weak var HS: UILabel!
     @IBAction func settingButton(sender: AnyObject) {
-    //settingsView.center = view.center
+        //settingsView.center = view.center
         if open {settingsView.hidden = true
-        open = false
-        GameScene().unpause()}
-        
+            open = false
+            GameScene().unpause()}
+            
         else {
             
             highscorelable.text = "High Score: \(highScore)"
             settingsView.hidden = false
-//            query.getFirstObjectInBackgroundWithBlock(){(gameScore: PFObject!, error: NSError!) -> Void in
-//                if error == nil && gameScore != nil {
-//                    highestscore = gameScore["highscore"] as Int
-//                    
-//                } else {
-//                    println(error)
-//                }
-//            }
+            //            query.getFirstObjectInBackgroundWithBlock(){(gameScore: PFObject!, error: NSError!) -> Void in
+            //                if error == nil && gameScore != nil {
+            //                    highestscore = gameScore["highscore"] as Int
+            //
+            //                } else {
+            //                    println(error)
+            //                }
+            //            }
             if highScore > highestscore{
-             score["username"] = username
-    
-            score["highscore"] = highScore
-            score.saveInBackground()
+                score["username"] = username
+                
+                score["highscore"] = highScore
+                score.saveInBackground()
                 highestscore = highScore
             }
             HS.text = "Highest gloabal Score = \(highestscore)" + "     "+"By User:" + topdog
-        open = true
-        GameScene().pause()}
+            open = true
+            GameScene().pause()}
     }
-  
+    
+    @IBAction func BacktoMenu(sender: AnyObject) {
+        GameScene().unpair()
+        var spriteView : SKView = self.view as SKView
+        spriteView.presentScene(nil)
+        self.navigationController?.popViewControllerAnimated(true)
+        //view = nil
+        
+    }
     
     @IBAction func settingsClose(sender: AnyObject) {
         settingsView.hidden = true
@@ -162,7 +171,9 @@ class GameViewController: UIViewController {
             score.saveInBackground()
             
         }
-
+        let annoyingview = self.view as SKView
+        annoyingview.presentScene(nil)
+        
     }
     override func viewDidDisappear(animated: Bool) {
         if highScore > highestscore{
@@ -170,7 +181,7 @@ class GameViewController: UIViewController {
             
             score["highscore"] = highScore
             score.saveInBackground()
-
-    }
+            
+        }
     }
 }
